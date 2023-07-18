@@ -1,11 +1,13 @@
 Objetivo:
 
-
 Criar uma API RestFull para controle de produtos
 
-Modelo: 
 
+Modelo: OK
     Produtos: id, nome, quantidade, valor, observacao
 
-Repositorio de produto
+Repositorio de produto: OK
+    obterTodos, obterPorID, adicionar, atualizar, deletar.
+
+Serviço de produto: OK
     obterTodos, obterPorID, adicionar, atualizar, deletar.
