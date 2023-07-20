@@ -1,18 +1,20 @@
+package com.teste.primeiroexemplo.services;
 
-import org.springframework.stereotype.Service;
-import com.teste.primeiroexemplo.repository.ProdutoRepository;
-import com.teste.primeiroexemplo.model.Produto;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.teste.primeiroexemplo.model.Produto;
+import com.teste.primeiroexemplo.repository.ProdutoRepository;
 
 @Service
 public class ProdutoService {
-
     @Autowired
     private ProdutoRepository produtoRepository;
 
-
-
-    /**
+     /**
      * Método para retornar uma lista de produtos
      * @return Lista de produtos.
      */
@@ -59,5 +61,4 @@ public class ProdutoService {
 
         return produtoRepository.atualizar(produto);
     }
-
 }

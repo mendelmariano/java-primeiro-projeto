@@ -11,3 +11,6 @@ Repositorio de produto: OK
 
 Serviço de produto: OK
     obterTodos, obterPorID, adicionar, atualizar, deletar.
+
+Controller de produto:
+    obterTodos, obterPorID, adicionar, atualizar, deletar.

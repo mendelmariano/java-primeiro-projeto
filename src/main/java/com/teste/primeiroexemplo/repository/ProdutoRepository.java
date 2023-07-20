@@ -45,7 +45,8 @@ public class ProdutoRepository {
      */
     public Produto adicionar(Produto produto) {
         ultimoId++;
-        produtos.add(ultimoId, produto);
+        produto.setId(ultimoId); // Supondo que o produto possui um método para definir o ID.
+        produtos.add(produto);
         return produto;
     }
 
