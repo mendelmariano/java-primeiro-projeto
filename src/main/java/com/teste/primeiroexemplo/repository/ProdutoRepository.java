@@ -8,10 +8,12 @@ import java.util.Optional;
 import org.springframework.stereotype.Repository;
 
 import com.teste.primeiroexemplo.model.Produto;
+import com.teste.primeiroexemplo.model.exception.ResourceNotFoundException;
 
 @Repository
 public class ProdutoRepository {
     
+    // Simulando o banco de dados
     private List<Produto> produtos = new ArrayList<Produto>();
     private Integer ultimoId = 0;
 
@@ -68,7 +70,7 @@ public class ProdutoRepository {
         // Encontrar o produto que deseja atualizar
         Optional<Produto> produtoEncontrado = obterPorId(produto.getId());
         if(produtoEncontrado.isEmpty()) {
-            throw new InputMismatchException("Produto não encontrado!");
+            throw new ResourceNotFoundException("Produto não encontrado!");
         }
 
         //Eu tenho que deletare o produto antigo da lista
