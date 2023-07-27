@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.teste.primeiroexemplo.model.Produto;
 import com.teste.primeiroexemplo.repository.ProdutoRepository;
+import com.teste.primeiroexemplo.repository.ProdutoRepository_old;
 
 @Service
 public class ProdutoService {
@@ -19,7 +20,8 @@ public class ProdutoService {
      * @return Lista de produtos.
      */
     public List<Produto> obterTodos() {
-        return produtoRepository.obterTodos();
+       // return produtoRepository.obterTodos();
+       return produtoRepository.findAll();
     }
 
     /**
@@ -29,7 +31,8 @@ public class ProdutoService {
      */
     public Optional<Produto> obterPorId(Integer id) {
 
-        return produtoRepository.obterPorId(id);
+       // return produtoRepository.obterPorId(id);
+        return produtoRepository.findById(id);
     }
 
     /**
@@ -39,7 +42,8 @@ public class ProdutoService {
      */
     public Produto adicionar(Produto produto) {
         
-        return produtoRepository.adicionar(produto);
+        // return produtoRepository.adicionar(produto);
+        return produtoRepository.save(produto);
     }
 
     /**
@@ -47,7 +51,8 @@ public class ProdutoService {
      * @param id id do produto que será deletado
      */
     public void deletar(Integer id) {
-        produtoRepository.deletar(id);
+        produtoRepository.deleteById(id);
+        // produtoRepository.deletar(id);
     }
 
 
@@ -59,7 +64,7 @@ public class ProdutoService {
      */
     public Produto atualizar(Integer id, Produto produto) {
         produto.setId(id);
-
-        return produtoRepository.atualizar(produto);
+        return produtoRepository.save(produto);
+        // return produtoRepository.atualizar(produto);
     }
 }
